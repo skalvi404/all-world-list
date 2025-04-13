@@ -7,3 +7,7 @@
 .visited{
     background-color: burlywood;
 }
+.li{
+    text-align: center;
+    align-items: center;
+}

@@ -6,6 +6,8 @@ const Countries = () => {
 
 const [countries,setCountries]=useState([])
 
+const [travelCountries,setTravelCountries]=useState([])
+
 
 
 useEffect(()=>{
@@ -15,14 +17,22 @@ useEffect(()=>{
 },[])
 
 const handleTravel=country=>{
-console.log(country);
 
+const newTravelCountry=[...travelCountries,country];
+setTravelCountries(newTravelCountry);
 
 }
 
     return (
         <div>
            <h4>All world Where You should Vist:{countries.length}</h4> 
+<div>
+<h5>Your Selected Country:{travelCountries.length}</h5>
+<ul>
+    {travelCountries.map(country=><span><li>{country.name.common}</li></span>)}
+</ul>
+</div>
+           
 
            <div className="countries-style">
             {
